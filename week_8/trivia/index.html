@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            let button_check = 0;
+
+            // Correct answer
+            let correct = document.querySelector('.correct');
+            correct.addEventListener('click', function(event) {
+                if (button_check == 0) {
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#answer_status1').innerHTML = 'Correct answer :)';
+                    button_check++;
+                }
+            });
+
+            // Incorrect answers
+            let incorrects = document.querySelectorAll('.incorrect');
+            for(let i = 0; i < incorrects.length; i++)
+            {
+                incorrects[i].addEventListener('click', function(event) {
+                    if (button_check == 0) {
+                        incorrects[i].style.backgroundColor = 'red';
+                        document.querySelector('#answer_status1').innerHTML = 'Incorrect answer :(';
+                    }
+                });
+            }
+
+            // Free answer
+            document.querySelector('#check').addEventListener('click', function(){
+                let input = document.querySelector('input');
+                if(input.value == 'FORTRAN'){
+                    input.style.backgroundColor = 'green';
+                    document.querySelector('#answer_status2').innerHTML = 'Correct answer :)';
+                } else {
+                    input.style.backgroundColor = 'red';
+                    document.querySelector('#answer_status2').innerHTML = 'Incorrect answer :(';
+                }
+            });
+        });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which one is NOT a programming language: </h3>
+                <button class="correct">HTML</button>
+                <button class="incorrect">JavaScript</button>
+                <button class="incorrect">Python</button>
+                <button class="incorrect">C</button>
+                <button class="incorrect">Go</button>
+
+                <p id="answer_status1"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What was the first commercially available programming language?</h3>
+                <input type="text"></input>
+                <button id="check">Check Answer</button>
+                <p id="answer_status2"></p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+1 - I would characterize their Audio Aura by executing a SQL query like:
+"SELECT (AVG(energy) + AVG(valence) + AVG(danceability)) / 3 AS Audio_Aura FROM songs;"
+then using this return value to categorize their Audio Aura.
+
+2 - I would insert a new kind of data in the 'songs' TABLE called 'mood', it would be a string value that describes the song feeling.
+    It would have a list of moods, like ['sad', 'happy', 'chill', 'crazy', ...], so to calculate their Audio Aura, I would COUNT all songs that matches
+    mood = some feeling, and return the one with the biggest number.

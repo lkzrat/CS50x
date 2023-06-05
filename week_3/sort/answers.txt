@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: Because sort1 was the fastest to sort a sorted array of numbers, what is the best case scenario. And the fastest omega notation is the bubble's.
+
+sort2 uses: merge sort
+
+How do you know?: Because sort2 was the fastest to sort an unsorted array of numbers, what is the worst case scenario. And the fastest Big O notation is the merge's.
+
+sort3 uses: selection sort
+
+How do you know?: Besides it was the one that was left, sort3 was the one with very similar times, sorting a sorted and an unsorted array of numbers, what matches with Selection's Theta notation.
